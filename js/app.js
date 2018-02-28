@@ -19,12 +19,11 @@ var imagesArray = [
 ];
 
 var getRandomPicture = imagesArray[Math.floor(Math.random()*imagesArray.length)];
+;
+//will display image on website
+document.body.innerHTML= "<img src='" + getRandomPicture + "'>";
 
-document.body.innerHTML = "<img src='" + getRandomPicture + "'>";
-
-
-
-
-// for (var index = 0; index < imagesArray.length; index++) {
-//   var item = getRandomItem(imagesArray);
-//   images[i].innerHTML = '<img src=' + imagesArray[i];
+for (var index = 0; index < imagesArray.length; index++) {
+  var item = getRandomItem(imagesArray);
+  images[i].innerHTML = '<img src=' + imagesArray[i];
+}
