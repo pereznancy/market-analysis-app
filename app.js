@@ -20,11 +20,12 @@ var imagesArray = [
 
 var getRandomPicture = imagesArray[Math.floor(Math.random()*imagesArray.length)];
 
-document.body.innerHTML = "<img src='" + getRandomPicture + "'>";
+document.getElementbyID("images").innerHTML = "<img src='" + getRandomPicture + "'>";
 
 
 
-
-// for (var index = 0; index < imagesArray.length; index++) {
-//   var item = getRandomItem(imagesArray);
-//   images[i].innerHTML = '<img src=' + imagesArray[i];
+function getThreePictures() {
+  for (var index = 0; index < imagesArray.length; index++) {
+    var item = getRandomPicture(imagesArray);
+    images[i].innerHTML = '<img src=' + imagesArray[i];
+}
