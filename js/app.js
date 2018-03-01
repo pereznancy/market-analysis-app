@@ -19,26 +19,23 @@ var imagesArray = [
 ];
 
 //select a random picture from the array and store it in the variable
-var getRandomPicture = imagesArray[Math.floor(Math.random()*imagesArray.length)];
-//use varible to send picture via inner.HTML for simplicity
-function showPictures() {
-  var pic = document.body.innerHTML = "<img src='" + getRandomPicture + "'>";
-  pic
+function getRandomPictures() {
+  var chosen = [];
+  for (var index = 0; index <3; index++) {
+    chosen[index] = imagesArray[Math.floor(Math.random()*imagesArray.length)];
+  }
+  if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) {
+    console.log('matching picture: ', chosen);
+    chosen = getRandomPictures();
+  } else {
+    return chosen;
+  }
 }
-showPictures();
 
-// document.getElementbyID("images").innerHTML = "<img src='" + getRandomPicture + "'>";
-// document.getElementbyID("images").innerHTML = "<img src='" + getRandomPicture + "'>";
 
-//
-// function getThreePictures() {
-//   var item = getRandomPicture;
-//   var index = 1
-//   while (index < 4) {
-//
-//   }
-// }
-//
+
+
+
 // function getThreePictures() {
 //   for (var index = 0; index < imagesArray.length; index++) {
 //     var item = getRandomPicture;
