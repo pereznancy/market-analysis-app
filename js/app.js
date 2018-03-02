@@ -35,11 +35,12 @@ function getRandomPictures() {
     var location = imagesArray[index].location;
     chosen = getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
   }
-  
+  for (var newIndex = 0; newIndex < 3; newIndex++) {
     var firstImage = document.createElement("img");
     var sendImage = document.getElementById("images");
-    firstImage.src = chosen[0].location;
+    firstImage.src = chosen[newIndex].location;
     sendImage.appendChild(firstImage);
+  }
 }
 getRandomPictures();
 
