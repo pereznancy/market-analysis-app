@@ -1,37 +1,50 @@
 'use strict'
 
+var trackClick = function(name, location) { //info will be pulled from array
+  this.name = name;
+  this.location = location;
+  this.vote = 0;
+}
 
-//array of all the images
+//array of all the images w/name and location
+//with new trackClick, it will send info to function above ^
 var imagesArray = [
-  ("bag", "images/bag.jpg"),
-  ("banana", "images/banana.jpg"),
-  ("boots", "images/boots.jpg"),
-  ("chair", "images/chair.jpg"),
-  ("cthulhu", "images/cthulhu.jpg"),
-  ("dragon", "images/dragon.jpg"),
-  ("pen", "images/pen.jpg"),
-  ("scissors", "images/scissors.jpg"),
-  ("shark", "images/shark.jpg"),
-  ("sweep", "images/sweep.jpg"),
-  ("unicorn", "images/unicorn.jpg"),
-  ("usb", "images/usb.jpg"),
-  ("watercan", "images/water_can.jpg"),
-  ("wineglass", "images/wine_glass.jpg"),
+  new trackClick("bag", "images/bag.jpg"),
+  new trackClick("banana", "images/banana.jpg"),
+  new trackClick("boots", "images/boots.jpg"),
+  new trackClick("chair", "images/chair.jpg"),
+  new trackClick("cthulhu", "images/cthulhu.jpg"),
+  new trackClick("dragon", "images/dragon.jpg"),
+  new trackClick("pen", "images/pen.jpg"),
+  new trackClick("scissors", "images/scissors.jpg"),
+  new trackClick("shark", "images/shark.jpg"),
+  new trackClick("sweep", "images/sweep.jpg"),
+  new trackClick("unicorn", "images/unicorn.jpg"),
+  new trackClick("usb", "images/usb.jpg"),
+  new trackClick("watercan", "images/water_can.jpg"),
+  new trackClick("wineglass", "images/wine_glass.jpg"),
 ];
 
 //select a random picture from the array and store it in the variable
 function getRandomPictures() {
   var chosen = [];  //array to hold the 3 pictures
-  for (var index = 0; index <3; index++) { //only need to instantiate until we get 3 images
+  for (var index = 0; index <3; index++) { //only need to get up to 3 images
     chosen[index] = imagesArray[Math.floor(Math.random()*imagesArray.length)];
   }
-  if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates
-    console.log('matching picture: ', chosen);
+  if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates aka
+    var location = imagesArray[index].location;
     chosen = getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
-  } else { //no dupes found finally
-    return chosen;
   }
+  
+    var firstImage = document.createElement("img");
+    var sendImage = document.getElementById("images");
+    firstImage.src = chosen[0].location;
+    sendImage.appendChild(firstImage);
 }
+getRandomPictures();
+
+// document.getElementById("images").addEventListener("click", recordClick);
+// window.addEventListener();
 
 
 
