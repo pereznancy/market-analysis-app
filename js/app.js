@@ -42,19 +42,6 @@ function getRandomPictures() {
     sendImage.appendChild(firstImage);
   }
 }
-getRandomPictures();
 
-// document.getElementById("images").addEventListener("click", recordClick);
-// window.addEventListener();
-
-
-
-
-
-// function getThreePictures() {
-//   for (var index = 0; index < imagesArray.length; index++) {
-//     var item = getRandomPicture;
-//     document.getElementbyID("images").innerHTML = "'<img src='" + item + "'>" ;
-//   }
-// }
-// getThreePictures();
+//event to add 3 images on load
+window.addEventListener("load", getRandomPictures);
