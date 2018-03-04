@@ -31,7 +31,7 @@ function getRandomPictures() {
   for (var index = 0; index <3; index++) { //only need to get up to 3 images
     chosen[index] = imagesArray[Math.floor(Math.random()*imagesArray.length)];
   }
-  if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates aka
+  if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates
     var location = imagesArray[index].location;
     chosen = getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
   }
@@ -43,5 +43,19 @@ function getRandomPictures() {
   }
 }
 
-//event to add 3 images on load
-window.addEventListener("load", getRandomPictures);
+window.addEventListener("load", getRandomPictures)
+
+// document.getElementById("images").addEventListener("click", recordClick);
+// window.addEventListener();
+
+
+
+
+
+// function getThreePictures() {
+//   for (var index = 0; index < imagesArray.length; index++) {
+//     var item = getRandomPicture;
+//     document.getElementbyID("images").innerHTML = "'<img src='" + item + "'>" ;
+//   }
+// }
+// getThreePictures();
