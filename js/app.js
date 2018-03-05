@@ -39,13 +39,14 @@ function getRandomPictures() {
   }
   if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates
     var location = imagesArray[index].location;
-    chosen = getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
-  }
-  for (var newIndex = 0; newIndex < 3; newIndex++) {
-    var firstImage = document.createElement("img");
-    firstImage.src = chosen[newIndex].location;
-    sendImage.appendChild(firstImage);
-    voteTracker += 1;
+    getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
+  }else {
+    for (var newIndex = 0; newIndex < 3; newIndex++) {
+      var firstImage = document.createElement("img");
+      firstImage.src = chosen[newIndex].location;
+      sendImage.appendChild(firstImage);
+      voteTracker += 1;
+    }
   }
 }
 
