@@ -1,9 +1,9 @@
 'use strict'
 
 var trackClick = function(name, location) { //info will be pulled from array
-  this.name = name;
+  this.label = name;
   this.location = location;
-  this.vote = 0;
+  this.y = 0;
 }
 
 function addListener() {
@@ -39,17 +39,18 @@ function getRandomPictures() {
   }
   if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates
     var location = imagesArray[index].location;
-    chosen = getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
-  }
-  for (var newIndex = 0; newIndex < 3; newIndex++) {
-    var firstImage = document.createElement("img");
-    firstImage.src = chosen[newIndex].location;
-    sendImage.appendChild(firstImage);
-    voteTracker += 1;
+    getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
+  } else {
+      for (var newIndex = 0; newIndex < 3; newIndex++) {
+        var firstImage = document.createElement("img");
+        firstImage.src = chosen[newIndex].location;
+        sendImage.appendChild(firstImage);
+        voteTracker += 1;
+    }
   }
 }
 
-//saves votes if clicked
+//saves votes if clickedd
 function newClicks(event) {
   if (event.target.tagName == "IMG") {
     var index = event.target.src.lastIndexOf("/");
@@ -57,8 +58,8 @@ function newClicks(event) {
     console.log(imageLocation);
     for (var indexClick = 0; indexClick < imagesArray.length; indexClick++)
       if (imagesArray[indexClick].location.indexOf(imageLocation) != -1) {
-        imagesArray[indexClick].vote += 1;
-        console.log(imagesArray[indexClick].vote);
+        imagesArray[indexClick].y += 1;
+        console.log(imagesArray[indexClick].y);
       }
   }
   getRandomPictures();
@@ -68,3 +69,4 @@ function newClicks(event) {
 
 window.addEventListener("load", getRandomPictures);
 window.addEventListener("load", addListener);
+
