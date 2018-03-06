@@ -1,5 +1,9 @@
 body {
+<<<<<<< HEAD
   background: #bd89e65e;
+=======
+  background: linear-gradient(purple, red, yellow); 
+>>>>>>> 4046618567e797bcaf037be5704f86898c825f72
 }
 
 
@@ -18,7 +22,11 @@ body {
 img {
   height: 300px;
   width: 300px;
+<<<<<<< HEAD
   border: 7px solid black;
+=======
+  border: 1px solid black;
+>>>>>>> 4046618567e797bcaf037be5704f86898c825f72
   border-radius: 15px;
 }
 
@@ -29,12 +37,18 @@ h1 {
 }
 
 input {
+<<<<<<< HEAD
 margin: 0 auto;
 display: block;
+=======
+margin: 0 auto; 
+display: block; 
+>>>>>>> 4046618567e797bcaf037be5704f86898c825f72
 }
 
 
 p {
+<<<<<<< HEAD
   text-align: center;
 }
 
@@ -42,4 +56,7 @@ p {
   height: 200px;
   width: 80%;
   margin: 0 auto;
+=======
+  text-align: center; 
+>>>>>>> 4046618567e797bcaf037be5704f86898c825f72
 }

@@ -41,11 +41,20 @@ function getRandomPictures() {
   if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates
     var location = imagesArray[index].location;
     getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
+<<<<<<< HEAD
   }else {
     for (var newIndex = 0; newIndex < 3; newIndex++) {
       var firstImage = document.createElement("img");
       firstImage.src = chosen[newIndex].location;
       sendImage.appendChild(firstImage);
+=======
+  } else {
+      for (var newIndex = 0; newIndex < 3; newIndex++) {
+        var firstImage = document.createElement("img");
+        firstImage.src = chosen[newIndex].location;
+        sendImage.appendChild(firstImage);
+        voteTracker += 1;
+>>>>>>> 4046618567e797bcaf037be5704f86898c825f72
     }
   }
 }
@@ -58,7 +67,11 @@ function newClicks(event) {
     for (var indexClick = 0; indexClick < imagesArray.length; indexClick++) {
       if (imagesArray[indexClick].location.indexOf(imageLocation) != -1) {
         imagesArray[indexClick].y += 1;
+<<<<<<< HEAD
         voteTracker += 1;
+=======
+        console.log(imagesArray[indexClick].y);
+>>>>>>> 4046618567e797bcaf037be5704f86898c825f72
       }
     }
     if (voteTracker == 15) {
@@ -73,3 +86,4 @@ function newClicks(event) {
 
 window.addEventListener("load", getRandomPictures);
 window.addEventListener("load", addListener);
+
