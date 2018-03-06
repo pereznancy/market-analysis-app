@@ -28,7 +28,9 @@ var imagesArray = [
   new trackClick("wineglass", "images/wine_glass.jpg"),
 ];
 
-var voteTracker = 0
+var voteTracker = 0;
+
+
 
 //select a random picture from the array and store it in the variable
 function getRandomPictures() {
@@ -46,7 +48,6 @@ function getRandomPictures() {
       var firstImage = document.createElement("img");
       firstImage.src = chosen[newIndex].location;
       sendImage.appendChild(firstImage);
-      voteTracker += 1;
     }
   }
 }
@@ -56,14 +57,14 @@ function newClicks(event) {
   if (event.target.tagName == "IMG") {
     var index = event.target.src.lastIndexOf("/");
     var imageLocation = "images/" + event.target.src.substring(index + 1);
-    console.log(imageLocation);
-    for (var indexClick = 0; indexClick < imagesArray.length; indexClick++)
+    for (var indexClick = 0; indexClick < imagesArray.length; indexClick++) {
       if (imagesArray[indexClick].location.indexOf(imageLocation) != -1) {
         imagesArray[indexClick].vote += 1;
-        console.log(imagesArray[indexClick].vote);
+        voteTracker += 1;
       }
+    }
+    getRandomPictures();
   }
-  getRandomPictures();
 }
 
 

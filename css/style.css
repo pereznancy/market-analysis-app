@@ -1,3 +1,7 @@
+body {
+  background-color: #bd89e65e;
+}
+
 #images {
   display: flex;
   justify-content: space-around;
@@ -21,4 +25,8 @@ h1 {
   text-align: center;
   font-family: monospace;
   font-size: 59px;
+}
+
+#list-container {
+  font-size: 19px;
 }
