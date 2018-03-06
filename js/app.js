@@ -1,9 +1,9 @@
 'use strict'
 
 var trackClick = function(name, location) { //info will be pulled from array
-  this.name = name;
+  this.label = name;
   this.location = location;
-  this.vote = 0;
+  this.y = 0;
 }
 
 function addListener() {
@@ -28,9 +28,10 @@ var imagesArray = [
   new trackClick("wineglass", "images/wine_glass.jpg"),
 ];
 
+var voteTracker = 0;
+
 //select a random picture from the array and store it in the variable
 function getRandomPictures() {
-  var voteTracker = 0
   var sendImage = document.getElementById("images");
   sendImage.innerHTML = "";
   var chosen = [];  //array to hold the 3 pictures
@@ -45,24 +46,27 @@ function getRandomPictures() {
       var firstImage = document.createElement("img");
       firstImage.src = chosen[newIndex].location;
       sendImage.appendChild(firstImage);
-      voteTracker += 1;
     }
   }
 }
 
-//saves votes if clicked
+//saves votes if clickedd
 function newClicks(event) {
   if (event.target.tagName == "IMG") {
     var index = event.target.src.lastIndexOf("/");
     var imageLocation = "images/" + event.target.src.substring(index + 1);
-    console.log(imageLocation);
-    for (var indexClick = 0; indexClick < imagesArray.length; indexClick++)
+    for (var indexClick = 0; indexClick < imagesArray.length; indexClick++) {
       if (imagesArray[indexClick].location.indexOf(imageLocation) != -1) {
-        imagesArray[indexClick].vote += 1;
-        console.log(imagesArray[indexClick].vote);
+        imagesArray[indexClick].y += 1;
+        voteTracker += 1;
       }
+    }
+    if (voteTracker == 15) {
+      showChart();
+    }else {
+      getRandomPictures();
+    }
   }
-  getRandomPictures();
 }
 
 

@@ -1,18 +1,45 @@
+body {
+  background: #bd89e65e;
+}
+
+
 #images {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 1em;
   margin-left: 10%;
   margin-right: 10%;
+  background: linear-gradient(#5604948c, #ca90f72e, #a87cc9);
+  border: 7px solid black;
+  border-radius: 20px;
+  flex-flow: row wrap;
 }
 
 img {
   height: 300px;
-  border: 1px solid black;
+  width: 300px;
+  border: 7px solid black;
+  border-radius: 15px;
 }
 
 h1 {
   text-align: center;
   font-family: monospace;
   font-size: 59px;
+}
+
+input {
+margin: 0 auto;
+display: block;
+}
+
+
+p {
+  text-align: center;
+}
+
+#chartContainer {
+  height: 200px;
+  width: 80%;
+  margin: 0 auto;
 }
