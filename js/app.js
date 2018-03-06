@@ -28,9 +28,10 @@ var imagesArray = [
   new trackClick("wineglass", "images/wine_glass.jpg"),
 ];
 
+var voteTracker = 0
+
 //select a random picture from the array and store it in the variable
 function getRandomPictures() {
-  var voteTracker = 0
   var sendImage = document.getElementById("images");
   sendImage.innerHTML = "";
   var chosen = [];  //array to hold the 3 pictures
