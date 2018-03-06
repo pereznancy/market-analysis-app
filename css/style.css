@@ -2,6 +2,11 @@ body {
   background-color: #bd89e65e;
 }
 
+p {
+  text-align: center;
+  font-size: 30px;
+}
+
 #images {
   display: flex;
   justify-content: space-around;
@@ -27,6 +32,12 @@ h1 {
   font-size: 59px;
 }
 
+h3 {
+  font-size: 50px;
+  font-family: monospace;
+}
+
 #list-container {
   font-size: 19px;
+  margin-left: 40%;
 }

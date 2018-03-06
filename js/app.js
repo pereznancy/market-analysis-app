@@ -63,7 +63,11 @@ function newClicks(event) {
         voteTracker += 1;
       }
     }
-    getRandomPictures();
+    if (voteTracker == 15) {
+      alert("You're Done! Click the Show Results Button below!");
+    } else {
+      getRandomPictures();
+    }
   }
 }
 
