@@ -11,22 +11,25 @@ function addListener() {
 }
 //array of all the images w/name and location
 //with new trackClick, it will send info to function above ^
-var imagesArray = [
-  new trackClick("bag", "images/bag.jpg"),
-  new trackClick("banana", "images/banana.jpg"),
-  new trackClick("boots", "images/boots.jpg"),
-  new trackClick("chair", "images/chair.jpg"),
-  new trackClick("cthulhu", "images/cthulhu.jpg"),
-  new trackClick("dragon", "images/dragon.jpg"),
-  new trackClick("pen", "images/pen.jpg"),
-  new trackClick("scissors", "images/scissors.jpg"),
-  new trackClick("shark", "images/shark.jpg"),
-  new trackClick("sweep", "images/sweep.jpg"),
-  new trackClick("unicorn", "images/unicorn.jpg"),
-  new trackClick("usb", "images/usb.jpg"),
-  new trackClick("watercan", "images/water_can.jpg"),
-  new trackClick("wineglass", "images/wine_glass.jpg"),
-];
+var imagesArray = [];
+if (localStorage.getItem("images") == null) {
+  new trackClick("bag", "images/bag.jpg");
+  new trackClick("banana", "images/banana.jpg");
+  new trackClick("boots", "images/boots.jpg");
+  new trackClick("chair", "images/chair.jpg");
+  new trackClick("cthulhu", "images/cthulhu.jpg");
+  new trackClick("dragon", "images/dragon.jpg");
+  new trackClick("pen", "images/pen.jpg");
+  new trackClick("scissors", "images/scissors.jpg");
+  new trackClick("shark", "images/shark.jpg");
+  new trackClick("sweep", "images/sweep.jpg");
+  new trackClick("unicorn", "images/unicorn.jpg");
+  new trackClick("usb", "images/usb.jpg");
+  new trackClick("watercan", "images/water_can.jpg");
+  new trackClick("wineglass", "images/wine_glass.jpg");
+} else {
+  imagesArray = JSON.parse(localStorage.getItem("images"));
+}
 
 //to track clicks
 var voteTracker = 0;
@@ -65,6 +68,7 @@ function newClicks(event) {
     if (voteTracker == 15) {
       showChart();
     }else {
+      localStorage.setItem("images", JSON.stringify(imagesArray));
       getRandomPictures();
     }
   }
