@@ -28,6 +28,7 @@ var imagesArray = [
   new trackClick("wineglass", "images/wine_glass.jpg"),
 ];
 
+//to track clicks
 var voteTracker = 0;
 
 //select a random picture from the array and store it in the variable
@@ -68,8 +69,6 @@ function newClicks(event) {
     }
   }
 }
-
-
 
 window.addEventListener("load", getRandomPictures);
 window.addEventListener("load", addListener);
