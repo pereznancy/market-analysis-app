@@ -1,5 +1,5 @@
 body {
-  background: #bd89e65e;
+  background-color: #dfe5f3;
 }
 
 
@@ -26,6 +26,7 @@ h1 {
   text-align: center;
   font-family: monospace;
   font-size: 59px;
+  margin-bottom: 0px;
 }
 
 input {
@@ -38,8 +39,18 @@ p {
   text-align: center;
 }
 
+#pdx {
+  height: 203px;
+}
+
 #chartContainer {
-  height: 200px;
   width: 80%;
   margin: 0 auto;
+}
+
+#bus {
+  margin: 0 auto;
+  height: 85%;
+  margin-left: 39%;
+  margin-right: 39%;
 }

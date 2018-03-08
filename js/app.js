@@ -65,10 +65,11 @@ function newClicks(event) {
         voteTracker += 1;
       }
     }
-    if (voteTracker == 15) {
+    if (voteTracker % 15 == 0) {
       showChart();
     }else {
       localStorage.setItem("images", JSON.stringify(imagesArray));
+      document.getElementById("chartContainer").innerHTML = "";
       getRandomPictures();
     }
   }
