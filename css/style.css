@@ -1,5 +1,9 @@
 body {
-  background-color: #dfe5f3;
+  background-image: url("portlandColor.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -9,8 +13,8 @@ body {
   padding: 1em;
   margin-left: 10%;
   margin-right: 10%;
-  background: linear-gradient(#5604948c, #ca90f72e, #a87cc9);
-  border: 7px solid black;
+  background: linear-gradient(#7b958399, #46549db3, #4b3d9b99, #6d4b6fb8, #ca9dccbd, #e7d0d4db);
+  border: 2px solid black;
   border-radius: 20px;
   flex-flow: row wrap;
 }
@@ -18,13 +22,13 @@ body {
 img {
   height: 300px;
   width: 300px;
-  border: 7px solid black;
+  border: 2px solid black;
   border-radius: 15px;
 }
 
 h1 {
   text-align: center;
-  font-family: monospace;
+  font-family: fantasy, Jazz LET, fantasy;
   font-size: 59px;
   margin-bottom: 0px;
 }
@@ -37,6 +41,13 @@ display: block;
 
 p {
   text-align: center;
+  background: linear-gradient(#7b958399, #46549db3, #4b3d9b99, #6d4b6fb8, #ca9dccbd, #e7d0d4db);
+  color: #100101;
+  border-radius: 14px;
+  margin-left: 41%;
+  margin-right: 41%;
+  font-size: 19px;
+  border: 2px solid black;
 }
 
 #pdx {
