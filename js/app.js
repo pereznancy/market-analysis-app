@@ -75,5 +75,6 @@ function newClicks(event) {
   }
 }
 
+//onload
 window.addEventListener("load", getRandomPictures);
 window.addEventListener("load", addListener);
