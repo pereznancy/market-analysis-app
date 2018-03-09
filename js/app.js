@@ -12,21 +12,23 @@ function addListener() {
 //array of all the images w/name and location
 //with new trackClick, it will send info to function above ^
 var imagesArray = [];
-if (localStorage.getItem("images") == null) {
-  new trackClick("bag", "images/bag.jpg");
-  new trackClick("banana", "images/banana.jpg");
-  new trackClick("boots", "images/boots.jpg");
-  new trackClick("chair", "images/chair.jpg");
-  new trackClick("cthulhu", "images/cthulhu.jpg");
-  new trackClick("dragon", "images/dragon.jpg");
-  new trackClick("pen", "images/pen.jpg");
-  new trackClick("scissors", "images/scissors.jpg");
-  new trackClick("shark", "images/shark.jpg");
-  new trackClick("sweep", "images/sweep.jpg");
-  new trackClick("unicorn", "images/unicorn.jpg");
-  new trackClick("usb", "images/usb.jpg");
-  new trackClick("watercan", "images/water_can.jpg");
-  new trackClick("wineglass", "images/wine_glass.jpg");
+if (localStorage.getItem("images") == null){
+  imagesArray.push(
+    new trackClick("bag", "images/bag.jpg"),
+    new trackClick("banana", "images/banana.jpg"),
+    new trackClick("boots", "images/boots.jpg"),
+    new trackClick("chair", "images/chair.jpg"),
+    new trackClick("cthulhu", "images/cthulhu.jpg"),
+    new trackClick("dragon", "images/dragon.jpg"),
+    new trackClick("pen", "images/pen.jpg"),
+    new trackClick("scissors", "images/scissors.jpg"),
+    new trackClick("shark", "images/shark.jpg"),
+    new trackClick("sweep", "images/sweep.jpg"),
+    new trackClick("unicorn", "images/unicorn.jpg"),
+    new trackClick("usb", "images/usb.jpg"),
+    new trackClick("watercan", "images/water_can.jpg"),
+    new trackClick("wineglass", "images/wine_glass.jpg")
+  );
 } else {
   imagesArray = JSON.parse(localStorage.getItem("images"));
 }
@@ -43,6 +45,7 @@ function getRandomPictures() {
     chosen[index] = imagesArray[Math.floor(Math.random()*imagesArray.length)];
   }
   if (chosen[0] === chosen[1] || chosen[0] === chosen[2] || chosen[1] === chosen[2]) { //make sure no imposters aka duplicates
+    console.log(index);
     var location = imagesArray[index].location;
     getRandomPictures(); //run through randomizer again to pick another random picture so no dupes
   }else {
