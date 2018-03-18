@@ -71,7 +71,7 @@ p {
 
 h1 {
   position: relative;
-  animation: pageLoadShow 1s;
+  animation: pageLoadShow 1s; 
 }
 
 
